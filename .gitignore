@@ -1,6 +1,6 @@
 venv*
 auto_trader/db.sqlite3
-auto_trader_app/__pycache__*
+auto_trader/auto_trader_app/__pycache__*
 auto_trader/auto_trader/__pycache__*
 user_profile/__pycache__*
 auto_trader/auto_trader/configuration_file.py
