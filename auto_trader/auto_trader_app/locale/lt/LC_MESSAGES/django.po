@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 21:21+0300\n"
-"PO-Revision-Date: 2022-06-23 21:21+0000\n"
+"POT-Creation-Date: 2022-06-27 21:21+0300\n"
+"PO-Revision-Date: 2022-06-27 21:22+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,80 +19,152 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\auto_trader_app\templates\base.html:5
-#| msgid "best trader"
+#: .\auto_trader_app\models.py:7 .\auto_trader_app\models.py:12
+msgid "Car type"
+msgstr "Automobilio tipas"
+
+#: .\auto_trader_app\models.py:9
+msgid "Enter car type"
+msgstr "Įveskite automobilio tipą"
+
+#: .\auto_trader_app\models.py:13
+#| msgid "Car type"
+msgid "Car types"
+msgstr "Automobilių tipai"
+
+#: .\auto_trader_app\models.py:17 .\auto_trader_app\models.py:22
+msgid "Car maker"
+msgstr "Markė"
+
+#: .\auto_trader_app\models.py:19
+msgid "Enter car maker name"
+msgstr "Įveskite markę"
+
+#: .\auto_trader_app\models.py:23
+#| msgid "Car maker"
+msgid "Car makers"
+msgstr "Markės"
+
+#: .\auto_trader_app\models.py:33 .\auto_trader_app\models.py:38
+msgid "Model"
+msgstr "Modelis"
+
+#: .\auto_trader_app\models.py:35
+msgid "Enter car model"
+msgstr "Įveskite automobilio modelį"
+
+#: .\auto_trader_app\models.py:39
+msgid "Models"
+msgstr "Modeliai"
+
+#: .\auto_trader_app\models.py:44 .\auto_trader_app\models.py:49
+msgid "Fuel type"
+msgstr "Kuro tipas"
+
+#: .\auto_trader_app\models.py:46
+msgid "Enter fuel type"
+msgstr "Įveskite kuro tipą"
+
+#: .\auto_trader_app\models.py:50
+#| msgid "Fuel type"
+msgid "Fuel types"
+msgstr "Kuro tipai"
+
+#: .\auto_trader_app\models.py:54 .\auto_trader_app\models.py:59
+msgid "Transmission type"
+msgstr "Pavarų dėžės tipas"
+
+#: .\auto_trader_app\models.py:56
+msgid "Enter transmission type"
+msgstr "Įveskite pavarų dėžės tipą"
+
+#: .\auto_trader_app\models.py:60
+#| msgid "Transmission type"
+msgid "Transmission types"
+msgstr "Pavarų dėžių tipai"
+
+#: .\auto_trader_app\models.py:75
+msgid "Price"
+msgstr "Kaina"
+
+#: .\auto_trader_app\models.py:75
+msgid "Enter price"
+msgstr "Įveskite kainą"
+
+#: .\auto_trader_app\templates\base.html:6
+#: .\auto_trader_app\templates\base.html:20
 msgid "auto trader"
 msgstr "skelbimų portalas"
 
-#: .\auto_trader_app\templates\base.html:23
+#: .\auto_trader_app\templates\base.html:27
 msgid "home"
 msgstr ""
 
-#: .\auto_trader_app\templates\base.html:24
+#: .\auto_trader_app\templates\base.html:28
 msgid "all books"
 msgstr ""
 
-#: .\auto_trader_app\templates\base.html:25
+#: .\auto_trader_app\templates\base.html:29
 msgid "all authors"
 msgstr ""
 
-#: .\auto_trader_app\templates\base.html:27
+#: .\auto_trader_app\templates\base.html:31
 msgid "my books"
 msgstr ""
 
-#: .\auto_trader_app\templates\base.html:28
-msgid "profile"
-msgstr ""
-
-#: .\auto_trader_app\templates\base.html:29
-msgid "logout"
-msgstr ""
-
-#: .\auto_trader_app\templates\base.html:31
-msgid "login"
-msgstr ""
-
 #: .\auto_trader_app\templates\base.html:32
-msgid "sign up"
-msgstr ""
+msgid "profile"
+msgstr "paskyra"
+
+#: .\auto_trader_app\templates\base.html:33
+msgid "logout"
+msgstr "atsijungti"
+
+#: .\auto_trader_app\templates\base.html:35
+msgid "login"
+msgstr "prisijungti"
 
 #: .\auto_trader_app\templates\base.html:36
-msgid "search"
-msgstr ""
+msgid "sign up"
+msgstr "registruotis"
 
 #: .\auto_trader_app\templates\base.html:40
-msgid "admin"
-msgstr ""
+msgid "search"
+msgstr "paieška"
 
-#: .\auto_trader_app\templates\index.html:4
+#: .\auto_trader_app\templates\base.html:44
+msgid "admin"
+msgstr "administracija"
+
+#: .\auto_trader_app\templates\index.html:2
 msgid "best trader"
 msgstr "geriausias skelbimų portalas"
 
-#: .\auto_trader_app\templates\index.html:5
+#: .\auto_trader_app\templates\index.html:3
 msgid "Welcome to auto trader"
 msgstr "Sveiki atvykę į skelbimų portalą"
 
-#: .\auto_trader_app\templates\index.html:6
+#: .\auto_trader_app\templates\index.html:4
 msgid "we have now"
 msgstr ""
 
-#: .\auto_trader_app\templates\index.html:9
+#: .\auto_trader_app\templates\index.html:7
 msgid "books"
 msgstr ""
 
-#: .\auto_trader_app\templates\index.html:10
+#: .\auto_trader_app\templates\index.html:8
 msgid "copies"
 msgstr ""
 
-#: .\auto_trader_app\templates\index.html:12
+#: .\auto_trader_app\templates\index.html:10
 msgid "available copies"
 msgstr ""
 
-#: .\auto_trader_app\templates\index.html:13
+#: .\auto_trader_app\templates\index.html:11
 msgid "authors"
 msgstr ""
 
-#: .\auto_trader_app\templates\index.html:16
+#: .\auto_trader_app\templates\index.html:14
 #, python-format
 msgid "You're comping here for the %(num_visits)s time."
 msgstr ""
