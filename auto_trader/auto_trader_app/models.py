@@ -12,6 +12,11 @@ class CarType(models.Model):
     verbose_name = _("Car type")
     verbose_name_plural = _("Car types")
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return f"{self.car_types}"
+
+
 class Maker(models.Model):
     maker = models.CharField(
         _("Car maker"),
@@ -21,6 +26,11 @@ class Maker(models.Model):
 
     verbose_name = _("Car maker")
     verbose_name_plural = _("Car makers")
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f"{self.maker}"
+
 
 class MakerModel(models.Model):
     maker = models.ForeignKey(
@@ -38,6 +48,10 @@ class MakerModel(models.Model):
     verbose_name = _("Model")
     verbose_name_plural = _("Models")
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return f"{self.model}"
+
 
 class FuelType(models.Model):
     fuel_types = models.CharField(
@@ -49,6 +63,11 @@ class FuelType(models.Model):
     verbose_name = _("Fuel type")
     verbose_name_plural = _("Fuel types")
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return f"{self.fuel_types}"
+
+
 class TransmissionType(models.Model):
     transmission_types = models.CharField(
         _("Transmission type"),
@@ -58,6 +77,11 @@ class TransmissionType(models.Model):
 
     verbose_name = _("Transmission type")
     verbose_name_plural = _("Transmission types")
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f"{self.transmission_types}"
+
 
 class CarAd(models.Model):
     car_model = models.ForeignKey(
@@ -73,3 +97,22 @@ class CarAd(models.Model):
         related_name="transmission_type",
     )
     price = models.FloatField(_("Price"), help_text=_("Enter price"))
+    year = models.CharField(
+        _("Year"),
+        max_length=4,
+        help_text=_("Enter car manufactured year"),
+        default=_("Year")
+    )
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return f"{self.car_model}"
+
+    def display_car_maker(self):
+        return f"{self.car_model.maker}"
+        
+    def display_car_model(self):
+        return f"{self.car_model.model}"
+
+    display_car_maker.short_description = _("Make")
+    display_car_model.short_description = _("Model")

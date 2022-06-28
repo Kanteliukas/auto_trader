@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% load i18n %}
+
+{% block content %}
+  <h1>{% trans "car ads list"|capfirst %}</h1>
+  {% if car_ads_list %}
+  <ul>
+    {% for car_ad in car_ads_list %}
+      <li>
+        <a href="">{{ car_ad.display_car_maker }} {{ car_ad.display_car_model }} {{ car_ad.year }} {{ car_ad.price }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>{% trans "there are no ads yet"|capfirst %}</p>
+  {% endif %}
+{% endblock %}
