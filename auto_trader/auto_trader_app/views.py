@@ -8,6 +8,7 @@ def index(request):
     response = render(request, "index.html")
     return response
 
+
 class CarAdsListView(generic.ListView):
     model = CarAd
     template_name = "car_ads_list.html"
@@ -15,3 +16,8 @@ class CarAdsListView(generic.ListView):
 
     def get_queryset(self):
         return CarAd.objects.all()
+
+
+class CarAdDetailView(generic.DetailView):
+    model = CarAd
+    template_name = "car_ad_detail.html"

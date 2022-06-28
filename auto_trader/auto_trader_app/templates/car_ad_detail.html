@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% load i18n %} {% block content %}
+<h1>{{ carad.display_car_maker }} {{ carad.display_car_model }}</h1>
+
+<p><strong>{% trans "year"|capfirst %}:</strong> {{ carad.year }}</p>
+<p><strong>{% trans "fuel type"|capfirst %}:</strong> {{ carad.fuel_type }}</p>
+<p><strong>{% trans "transmission type"|capfirst %}:</strong> {{ carad.transmission_type }}</p>
+<p><strong>{% trans "price"|capfirst %}:</strong>€ {{ carad.price }}</p>
+
+{% endblock %}

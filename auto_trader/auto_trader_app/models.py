@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 
@@ -101,16 +102,19 @@ class CarAd(models.Model):
         _("Year"),
         max_length=4,
         help_text=_("Enter car manufactured year"),
-        default=_("Year")
+        default=_("Year"),
     )
 
     def __str__(self):
         """String for representing the Model object."""
         return f"{self.car_model}"
 
+    def get_absolute_url(self):
+        return reverse("car-ad-detail", args=[str(self.id)])
+
     def display_car_maker(self):
         return f"{self.car_model.maker}"
-        
+
     def display_car_model(self):
         return f"{self.car_model.model}"
 

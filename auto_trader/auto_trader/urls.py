@@ -17,9 +17,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path("", include("auto_trader_app.urls")),
+    path("auto_trader_app/", include("auto_trader_app.urls")),
+    path("", RedirectView.as_view(url="auto_trader_app/", permanent=False)),
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("rosetta/", include("rosetta.urls")),
