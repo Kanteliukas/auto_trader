@@ -23,31 +23,33 @@
           <span class="navbar-toggler-icon"></span>
         </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">{% block navigation %}
+                    <ul class="navbar-nav">
+                        {% block navigation %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">{% trans "home"|capfirst %}</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="">{% trans "all books"|capfirst %}</a></li>
-            <li class="nav-item"><a class="nav-link" href="">{% trans "all authors"|capfirst %}</a></li>
-            {% if user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link" href="">{% trans "my books"|capfirst %}</a></li>
-              <li class="nav-item"><a class="nav-link" href="">{% trans "profile"|capfirst %}</a></li>
-              <li class="nav-item"><a class="nav-link" href="">{% trans "logout"|capfirst %}</a></li>
-            {% else %}
-              <li class="nav-item"><a class="nav-link" href="">{% trans "login"|capfirst %}</a></li>
-              <li class="nav-item"><a class="nav-link" href="">{% trans "sign up"|capfirst %}</a></li>
-            {% endif %} -->
-                        <!-- <li>
-              <form action="" method="get" class="form-inline my-2 my-md-0">
-                <input name="query" class="form-control" type="text" placeholder="{% trans "search"|capfirst %}">
-              </form>
-            </li> -->
-                        <!-- {% if user.is_authenticated and user.is_superuser %}
-              <li class="nav-item"><a class="nav-link" href="">{% trans "admin"|capfirst %}</a></li>
-            {% endif %} -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'car-ads' %}">{% trans "car ads"|capfirst %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'new-car-ad'%}">{% trans "create ad"|capfirst %}</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href=""></a></li>
+                        {% if user.is_authenticated %}
+                          <li class="nav-item"><a class="nav-link" href=""></a></li>
+                          <li class="nav-item"><a class="nav-link" href="">{% trans "profile"|capfirst %}</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">{% trans "logout"|capfirst %}</a></li>
+                        {% else %}
+                          <li class="nav-item"><a class="nav-link" href="">{% trans "login"|capfirst %}</a></li>
+                          <li class="nav-item"><a class="nav-link" href="">{% trans "sign up"|capfirst %}</a></li>
+                        {% endif %} -->
+                                    <!-- <li>
+                          <form action="" method="get" class="form-inline my-2 my-md-0">
+                            <input name="query" class="form-control" type="text" placeholder="{% trans "search"|capfirst %}">
+                          </form>
+                        </li> -->
+                                    <!-- {% if user.is_authenticated and user.is_superuser %}
+                          <li class="nav-item"><a class="nav-link" href="">{% trans "admin"|capfirst %}</a></li>
+                        {% endif %} -->
                         {% endblock navigation %}</ul>
                     <form action="{% url 'set_language' %}" method="post">
                         {% csrf_token %}
-                        <select name="language" class="form-control" onchange="this.form.submit()">
-              {% get_available_languages as LANGUAGES %}
+                        <select name="language" class="form-control" onchange="this.form.submit()"> 
+              {% get_available_languages as LANGUAGES %} 
               {% for lang in LANGUAGES %}
                 <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected=selected{% endif %}>
                 {{ lang.1 }}</options>

@@ -1,15 +1,4 @@
 {% extends "base.html" %} {% load i18n %} {% block content %}
 <h1>{% trans "best trader"|capfirst %}</h1>
 <p>{% blocktrans %}Welcome to auto trader{% endblocktrans %}</p>
-<!-- <p>{% trans "we have now"|capfirst %}:</p>
-  <ul>
-    {# some text #}
-    <li><strong>{% trans "books"|capfirst %}:</strong> {{ num_books }}</li>
-    <li><strong>{% trans "copies"|capfirst %}:</strong> {{ num_instances }}</li>
-    {% comment 'comment_name' %}
-    <li><strong>{% trans "available copies"|capfirst %}:</strong> {{ num_instances_available }}</li>
-    <li><strong>{% trans "authors" %}:</strong> {{ num_authors }}</li>
-    {% endcomment %}
-  </ul>  
-  <p>{% blocktrans %}You're comping here for the {{ num_visits }} time.{% endblocktrans %}</p> -->
 {% endblock %}

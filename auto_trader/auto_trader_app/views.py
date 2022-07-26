@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
+from django.urls import reverse_lazy
 from .models import CarAd
+from .form import CreateAdForm
 
 
 def index(request):
@@ -21,3 +23,10 @@ class CarAdsListView(generic.ListView):
 class CarAdDetailView(generic.DetailView):
     model = CarAd
     template_name = "car_ad_detail.html"
+
+
+class CarAdCreateView(generic.CreateView):
+    model = CarAd
+    form_class = CreateAdForm
+    success_url = reverse_lazy("car-ads")
+    template_name = "new_car_ad.html"

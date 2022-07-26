@@ -10,12 +10,14 @@ class CarType(models.Model):
         help_text=_("Enter car type"),
     )
 
-    verbose_name = _("Car type")
-    verbose_name_plural = _("Car types")
-
     def __str__(self):
         """String for representing the Model object."""
         return f"{self.car_types}"
+
+    class Meta:
+        verbose_name = _("Car type")
+        verbose_name_plural = _("Car types")
+        ordering = ["car_types"]
 
 
 class Maker(models.Model):
@@ -25,12 +27,14 @@ class Maker(models.Model):
         help_text=_("Enter car maker name"),
     )
 
-    verbose_name = _("Car maker")
-    verbose_name_plural = _("Car makers")
-
     def __str__(self):
         """String for representing the Model object."""
         return f"{self.maker}"
+
+    class Meta:
+        verbose_name = _("Car maker")
+        verbose_name_plural = _("Car makers")
+        ordering = ["maker"]
 
 
 class MakerModel(models.Model):
@@ -46,12 +50,14 @@ class MakerModel(models.Model):
         help_text=_("Enter car model"),
     )
 
-    verbose_name = _("Model")
-    verbose_name_plural = _("Models")
-
     def __str__(self):
         """String for representing the Model object."""
-        return f"{self.model}"
+        return f"{self.maker} {self.model}"
+
+    class Meta:
+        verbose_name = _("Model")
+        verbose_name_plural = _("Models")
+        ordering = ["maker", "model"]
 
 
 class FuelType(models.Model):
@@ -61,12 +67,14 @@ class FuelType(models.Model):
         help_text=_("Enter fuel type"),
     )
 
-    verbose_name = _("Fuel type")
-    verbose_name_plural = _("Fuel types")
-
     def __str__(self):
         """String for representing the Model object."""
         return f"{self.fuel_types}"
+
+    class Meta:
+        verbose_name = _("Fuel type")
+        verbose_name_plural = _("Fuel types")
+        ordering = ["fuel_types"]
 
 
 class TransmissionType(models.Model):
@@ -76,26 +84,37 @@ class TransmissionType(models.Model):
         help_text=_("Enter transmission type"),
     )
 
-    verbose_name = _("Transmission type")
-    verbose_name_plural = _("Transmission types")
-
     def __str__(self):
         """String for representing the Model object."""
         return f"{self.transmission_types}"
 
+    class Meta:
+        verbose_name = _("Transmission type")
+        verbose_name_plural = _("Transmission types")
+        ordering = ["transmission_types"]
+
 
 class CarAd(models.Model):
     car_model = models.ForeignKey(
-        MakerModel, on_delete=models.SET_NULL, null=True, related_name="car_model"
+        MakerModel,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="car_model",
+        verbose_name=_("car model"),
     )
     fuel_type = models.ForeignKey(
-        FuelType, on_delete=models.SET_NULL, null=True, related_name="fuel_type"
+        FuelType,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="fuel_type",
+        verbose_name=_("fuel type"),
     )
     transmission_type = models.ForeignKey(
         TransmissionType,
         on_delete=models.SET_NULL,
         null=True,
         related_name="transmission_type",
+        verbose_name=_("transmission type"),
     )
     price = models.FloatField(_("Price"), help_text=_("Enter price"))
     year = models.CharField(
@@ -120,3 +139,7 @@ class CarAd(models.Model):
 
     display_car_maker.short_description = _("Make")
     display_car_model.short_description = _("Model")
+
+    class Meta:
+        verbose_name = _("Car ad")
+        verbose_name_plural = _("Car ads")
