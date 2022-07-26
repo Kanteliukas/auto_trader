@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from django.template.defaultfilters import slugify
 
 
 class CarType(models.Model):
@@ -126,7 +127,7 @@ class CarAd(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return f"{self.car_model}"
+        return f"{self.id} {self.car_model}"
 
     def get_absolute_url(self):
         return reverse("car-ad-detail", args=[str(self.id)])
@@ -143,3 +144,24 @@ class CarAd(models.Model):
     class Meta:
         verbose_name = _("Car ad")
         verbose_name_plural = _("Car ads")
+
+
+def get_image_filename(instance, filename):
+    title = instance.car_ad.car_model
+    slug = slugify(title)
+    return "car_ad_images/%s-%s" % (slug, filename)
+
+
+class Images(models.Model):
+    car_ad = models.ForeignKey(
+        CarAd,
+        on_delete=models.SET_NULL,
+        default=None,
+        null=True,
+        verbose_name=_("car ad"),
+    )
+    image = models.ImageField(upload_to=get_image_filename, verbose_name=_("Image"))
+
+    class Meta:
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")
