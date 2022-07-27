@@ -2,17 +2,41 @@
 {% load crispy_forms_tags i18n %}
 {% block content %}
 <h1>{% trans "car ads list"|capfirst %}</h1>
-<form method="get" action="{% url 'car-ads' %}">
-    {{ filterset.form|crispy }}
-    <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">{% trans "filter"|capfirst %}</button>
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseFilter">
+                    {% trans "filters"|capfirst %}
+                </button>
+            </h5>
+        </div>
+        <div id="collapseFilter" class="collapse" aria-labelledby="headingFilter" data-parent="#accordion">
+            <form method="get" action="{% url 'car-ads' %}">
+                {{ filterset.form|crispy }}
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">{% trans "filter"|capfirst %}</button>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
+</div>
+
 {% if car_ads_list %}
-<ul>
+<ul style="list-style-type:none;">
     {% for car_ad in car_ads_list %}
     <li>
-        <a href="{% url 'car-ad-detail' car_ad.pk %}">{{ car_ad.display_car_maker }} {{ car_ad.display_car_model }} {{ car_ad.year }} {{ car_ad.price }}</a>
+        <a href="{% url 'car-ad-detail' car_ad.pk %}" style="text-decoration:none">
+            <div class="border">
+                <div class="row">
+                    <img src="{{ car_ad.images_set.first.image.url|default:'/media/car_ad_images/default.png' }}" class="img-thumbnail" alt="No image" style="width:150px">
+                    <div class="col-sm"><strong>{% trans "maker"|capfirst %}:</strong>{{ car_ad.display_car_maker }}</div>
+                    <div class="col-sm"><strong>{% trans "model"|capfirst %}:</strong>{{ car_ad.display_car_model }}</div>
+                    <div class="col-sm"><strong>{% trans "year"|capfirst %}:</strong>{{ car_ad.year }}</div>
+                    <div class="col-sm"><strong>{% trans "price"|capfirst %}:</strong>{{ car_ad.price }}</div>
+                </div>
+            </div>
+        </a>
     </li>
     {% endfor %}
 </ul>

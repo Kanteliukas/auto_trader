@@ -38,17 +38,17 @@ class CarAdDetailView(generic.DetailView):
 
 def new_car_ad(request):
 
-    ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=3)
+    image_form_set = modelformset_factory(Images, form=ImageForm, extra=3)
     #'extra' means the number of photos that you can upload   ^
     if request.method == "POST":
 
-        carAdForm = CreateAdForm(request.POST)
-        formset = ImageFormSet(
+        car_ad_form = CreateAdForm(request.POST)
+        formset = image_form_set(
             request.POST, request.FILES, queryset=Images.objects.none()
         )
 
-        if carAdForm.is_valid() and formset.is_valid():
-            car_ad_form = carAdForm.save(commit=False)
+        if car_ad_form.is_valid() and formset.is_valid():
+            car_ad_form = car_ad_form.save(commit=False)
             car_ad_form.save()
 
             for form in formset.cleaned_data:
@@ -61,10 +61,10 @@ def new_car_ad(request):
             messages.success(request, _("Success"))
             return HttpResponseRedirect("/auto_trader_app/carads")
         else:
-            print(carAdForm.errors, formset.errors)
+            print(car_ad_form.errors, formset.errors)
     else:
-        carAdForm = CreateAdForm()
-        formset = ImageFormSet(queryset=Images.objects.none())
+        car_ad_form = CreateAdForm()
+        formset = image_form_set(queryset=Images.objects.none())
     return render(
-        request, "new_car_ad.html", {"carAdForm": carAdForm, "formset": formset}
+        request, "new_car_ad.html", {"carAdForm": car_ad_form, "formset": formset}
     )
