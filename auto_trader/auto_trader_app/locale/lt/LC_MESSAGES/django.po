@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-27 13:40+0300\n"
-"PO-Revision-Date: 2022-07-27 13:40+0000\n"
+"POT-Creation-Date: 2022-07-27 17:22+0300\n"
+"PO-Revision-Date: 2022-07-27 17:22+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -187,11 +187,15 @@ msgstr "kaina"
 msgid "car photos"
 msgstr "automobilio nuotraukos"
 
-#: .\auto_trader_app\templates\car_ads_list.html:2
+#: .\auto_trader_app\templates\car_ads_list.html:4
 msgid "car ads list"
 msgstr "auto skelbimų sąrašas"
 
-#: .\auto_trader_app\templates\car_ads_list.html:12
+#: .\auto_trader_app\templates\car_ads_list.html:8
+msgid "filter"
+msgstr "filtruoti"
+
+#: .\auto_trader_app\templates\car_ads_list.html:20
 msgid "there are no ads yet"
 msgstr "skelbimų kol kas nėra"
 
@@ -211,7 +215,7 @@ msgstr "naujas auto skelbimas"
 msgid "save"
 msgstr "išsaugoti"
 
-#: .\auto_trader_app\views.py:55
+#: .\auto_trader_app\views.py:61
 msgid "Success"
 msgstr "Pavyko"
 
