@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 16:18+0300\n"
-"PO-Revision-Date: 2022-07-26 16:18+0000\n"
+"POT-Creation-Date: 2022-07-27 13:40+0300\n"
+"PO-Revision-Date: 2022-07-27 13:40+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,109 +19,120 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\auto_trader_app\models.py:8 .\auto_trader_app\models.py:18
+#: .\auto_trader_app\models.py:9 .\auto_trader_app\models.py:19
 msgid "Car type"
 msgstr "Automobilio tipas"
 
-#: .\auto_trader_app\models.py:10
+#: .\auto_trader_app\models.py:11
 msgid "Enter car type"
 msgstr "Įveskite automobilio tipą"
 
-#: .\auto_trader_app\models.py:19
+#: .\auto_trader_app\models.py:20
 msgid "Car types"
 msgstr "Automobilių tipai"
 
-#: .\auto_trader_app\models.py:25 .\auto_trader_app\models.py:35
+#: .\auto_trader_app\models.py:26 .\auto_trader_app\models.py:36
 msgid "Car maker"
 msgstr "Markė"
 
-#: .\auto_trader_app\models.py:27
+#: .\auto_trader_app\models.py:28
 msgid "Enter car maker name"
 msgstr "Įveskite markę"
 
-#: .\auto_trader_app\models.py:36
+#: .\auto_trader_app\models.py:37
 msgid "Car makers"
 msgstr "Markės"
 
-#: .\auto_trader_app\models.py:48 .\auto_trader_app\models.py:58
-#: .\auto_trader_app\models.py:141
+#: .\auto_trader_app\models.py:49 .\auto_trader_app\models.py:59
+#: .\auto_trader_app\models.py:142
 msgid "Model"
 msgstr "Modelis"
 
-#: .\auto_trader_app\models.py:50
+#: .\auto_trader_app\models.py:51
 msgid "Enter car model"
 msgstr "Įveskite automobilio modelį"
 
-#: .\auto_trader_app\models.py:59
+#: .\auto_trader_app\models.py:60
 msgid "Models"
 msgstr "Modeliai"
 
-#: .\auto_trader_app\models.py:65 .\auto_trader_app\models.py:75
+#: .\auto_trader_app\models.py:66 .\auto_trader_app\models.py:76
 msgid "Fuel type"
 msgstr "Kuro tipas"
 
-#: .\auto_trader_app\models.py:67
+#: .\auto_trader_app\models.py:68
 msgid "Enter fuel type"
 msgstr "Įveskite kuro tipą"
 
-#: .\auto_trader_app\models.py:76
+#: .\auto_trader_app\models.py:77
 msgid "Fuel types"
 msgstr "Kuro tipai"
 
-#: .\auto_trader_app\models.py:82 .\auto_trader_app\models.py:92
+#: .\auto_trader_app\models.py:83 .\auto_trader_app\models.py:93
 msgid "Transmission type"
 msgstr "Pavarų dėžės tipas"
 
-#: .\auto_trader_app\models.py:84
+#: .\auto_trader_app\models.py:85
 msgid "Enter transmission type"
 msgstr "Įveskite pavarų dėžės tipą"
 
-#: .\auto_trader_app\models.py:93
+#: .\auto_trader_app\models.py:94
 msgid "Transmission types"
 msgstr "Pavarų dėžių tipai"
 
-#: .\auto_trader_app\models.py:103
-#| msgid "Enter car model"
+#: .\auto_trader_app\models.py:104
 msgid "car model"
 msgstr "automobilio modelis"
 
-#: .\auto_trader_app\models.py:110
-#: .\auto_trader_app\templates\car_ad_detail.html:5
+#: .\auto_trader_app\models.py:111
+#: .\auto_trader_app\templates\car_ad_detail.html:8
 msgid "fuel type"
 msgstr "kuro tipas"
 
-#: .\auto_trader_app\models.py:117
-#: .\auto_trader_app\templates\car_ad_detail.html:6
+#: .\auto_trader_app\models.py:118
+#: .\auto_trader_app\templates\car_ad_detail.html:9
 msgid "transmission type"
 msgstr "pavarų dėžės tipas"
 
-#: .\auto_trader_app\models.py:119
+#: .\auto_trader_app\models.py:120
 msgid "Price"
 msgstr "Kaina"
 
-#: .\auto_trader_app\models.py:119
+#: .\auto_trader_app\models.py:120
 msgid "Enter price"
 msgstr "Įveskite kainą"
 
-#: .\auto_trader_app\models.py:121 .\auto_trader_app\models.py:124
+#: .\auto_trader_app\models.py:122 .\auto_trader_app\models.py:125
 msgid "Year"
 msgstr "Metai"
 
-#: .\auto_trader_app\models.py:123
+#: .\auto_trader_app\models.py:124
 msgid "Enter car manufactured year"
 msgstr "Įveskite automobilio gamybos metus"
 
-#: .\auto_trader_app\models.py:140
+#: .\auto_trader_app\models.py:141
 msgid "Make"
 msgstr "Markė"
 
-#: .\auto_trader_app\models.py:144
+#: .\auto_trader_app\models.py:145
 msgid "Car ad"
 msgstr "Auto skelbimas"
 
-#: .\auto_trader_app\models.py:145
+#: .\auto_trader_app\models.py:146
 msgid "Car ads"
 msgstr "Auto skelbimai"
+
+#: .\auto_trader_app\models.py:161
+msgid "car ad"
+msgstr "auto skelbimas"
+
+#: .\auto_trader_app\models.py:163 .\auto_trader_app\models.py:166
+msgid "Image"
+msgstr "Paveiksliukas"
+
+#: .\auto_trader_app\models.py:167
+msgid "Images"
+msgstr "Paveiksliukai"
 
 #: .\auto_trader_app\templates\base.html:6
 #: .\auto_trader_app\templates\base.html:20
@@ -164,13 +175,17 @@ msgstr "paieška"
 msgid "admin"
 msgstr "administracija"
 
-#: .\auto_trader_app\templates\car_ad_detail.html:4
+#: .\auto_trader_app\templates\car_ad_detail.html:7
 msgid "year"
 msgstr "metai"
 
-#: .\auto_trader_app\templates\car_ad_detail.html:7
+#: .\auto_trader_app\templates\car_ad_detail.html:10
 msgid "price"
 msgstr "kaina"
+
+#: .\auto_trader_app\templates\car_ad_detail.html:12
+msgid "car photos"
+msgstr "automobilio nuotraukos"
 
 #: .\auto_trader_app\templates\car_ads_list.html:2
 msgid "car ads list"
@@ -192,9 +207,16 @@ msgstr "Sveiki atvykę į skelbimų portalą"
 msgid "new car ad"
 msgstr "naujas auto skelbimas"
 
-#: .\auto_trader_app\templates\new_car_ad.html:12
+#: .\auto_trader_app\templates\new_car_ad.html:21
 msgid "save"
 msgstr "išsaugoti"
+
+#: .\auto_trader_app\views.py:55
+msgid "Success"
+msgstr "Pavyko"
+
+#~ msgid "images"
+#~ msgstr "paveiksliukai"
 
 #, fuzzy
 #~ msgid "fuel_type"

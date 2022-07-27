@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% load i18n %} {% block content %}
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+{% load static %}
 <h1>{{ carad.display_car_maker }} {{ carad.display_car_model }}</h1>
 
 <p><strong>{% trans "year"|capfirst %}:</strong> {{ carad.year }}</p>
@@ -6,4 +9,18 @@
 <p><strong>{% trans "transmission type"|capfirst %}:</strong> {{ carad.transmission_type }}</p>
 <p><strong>{% trans "price"|capfirst %}:</strong>€ {{ carad.price }}</p>
 
+<p><strong>{% trans "car photos"|capfirst %}:</strong></p>
+<div class="row">
+    {% if carad.images_set.all %} 
+        {% for car_image in carad.images_set.all %}
+        <div class="col">
+            <img src="{{ car_image.image.url }}" class="card-img-top" alt="...">        
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="col">
+            <img src="{% static 'img/no-image.png' %}" class="card-img-top">
+        </div>
+    {% endif %}
+</div>
 {% endblock %}

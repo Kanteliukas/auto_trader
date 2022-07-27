@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+from django.views.generic.edit import FormMixin
 from .models import CarAd, Images
 from .form import CreateAdForm, NewCreateAdForm, ImageForm
 
@@ -25,7 +27,6 @@ class CarAdsListView(generic.ListView):
 class CarAdDetailView(generic.DetailView):
     model = CarAd
     template_name = "car_ad_detail.html"
-
 
 def new_car_ad(request):
 
@@ -51,6 +52,7 @@ def new_car_ad(request):
                     photo.save()
             messages.success(
                 request,
+                _("Success")
             )
             return HttpResponseRedirect("/auto_trader_app/carads")
         else:
