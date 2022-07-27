@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rosetta",  
-    'crispy_forms',
+    "rosetta",
+    "crispy_forms",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,9 @@ ROOT_URLCONF = "auto_trader.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates'),],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -140,4 +143,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR.joinpath(MEDIA_URL)
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = "bootstrap4"

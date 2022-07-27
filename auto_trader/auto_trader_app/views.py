@@ -2,12 +2,11 @@ from django.shortcuts import render
 from django.forms import modelformset_factory
 from django.contrib import messages
 from django.views import generic
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from django.utils.translation import gettext_lazy as _
-from django.views.generic.edit import FormMixin
 from .models import CarAd, Images
-from .form import CreateAdForm, NewCreateAdForm, ImageForm
+from .form import CreateAdForm, ImageForm
+from .filters import CarAdFilter
 
 
 def index(request):
@@ -19,14 +18,23 @@ class CarAdsListView(generic.ListView):
     model = CarAd
     template_name = "car_ads_list.html"
     context_object_name = "car_ads_list"
+    filterset_class = CarAdFilter
 
     def get_queryset(self):
-        return CarAd.objects.all()
+        queryset = super().get_queryset()
+        self.filterset = self.filterset_class(self.request.GET, queryset=queryset)
+        return self.filterset.qs.distinct()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["filterset"] = self.filterset
+        return context
 
 
 class CarAdDetailView(generic.DetailView):
     model = CarAd
     template_name = "car_ad_detail.html"
+
 
 def new_car_ad(request):
 
@@ -34,7 +42,7 @@ def new_car_ad(request):
     #'extra' means the number of photos that you can upload   ^
     if request.method == "POST":
 
-        carAdForm = NewCreateAdForm(request.POST)
+        carAdForm = CreateAdForm(request.POST)
         formset = ImageFormSet(
             request.POST, request.FILES, queryset=Images.objects.none()
         )
@@ -50,15 +58,12 @@ def new_car_ad(request):
                     image = form["image"]
                     photo = Images(car_ad=car_ad_form, image=image)
                     photo.save()
-            messages.success(
-                request,
-                _("Success")
-            )
+            messages.success(request, _("Success"))
             return HttpResponseRedirect("/auto_trader_app/carads")
         else:
             print(carAdForm.errors, formset.errors)
     else:
-        carAdForm = NewCreateAdForm()
+        carAdForm = CreateAdForm()
         formset = ImageFormSet(queryset=Images.objects.none())
     return render(
         request, "new_car_ad.html", {"carAdForm": carAdForm, "formset": formset}
